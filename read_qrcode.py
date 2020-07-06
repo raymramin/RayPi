@@ -5,7 +5,7 @@ import time
 import cv2
 
 window_name = "QR Code Scanner"
-data_file = "./codedata.txt"
+data_file = "codedata.txt"
 
 # Initialize the video stream
 print("[INFO] Starting stream")
@@ -14,6 +14,9 @@ vs = VideoStream(src=0).start()
 time.sleep(2.0)
 
 csv = open(data_file, "w")
+
+found = set()
+i = 1
 
 while True:
     # Grab frame from threaded video and resize to 400px
@@ -41,6 +44,8 @@ while True:
 
             found.clear()
             found.add(barcodeData)
+            print("Added barcode info " , i , " time")
+            i++
 
     cv2.imshow(window_name, frame)
     key = cv2.waitKey(1) & 0xFF
