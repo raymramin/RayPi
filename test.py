@@ -9,6 +9,5 @@
 
 from pybeep.pybeep import PyVibrate, PyBeep
 PyBeep().beep()
-PyBeep.beepn(3)
-
+PyBeep.beepn(5)
 print("Done")
