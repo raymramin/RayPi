@@ -16,7 +16,7 @@ time.sleep(2.0)
 csv = open(data_file, "w")
 
 found = set()
-i = 1
+i = 0
 
 while True:
     # Grab frame from threaded video and resize to 400px
@@ -45,7 +45,7 @@ while True:
             found.clear()
             found.add(barcodeData)
             print("Added barcode info " , i , " time")
-            i++
+            i = i + 1
 
     cv2.imshow(window_name, frame)
     key = cv2.waitKey(1) & 0xFF
