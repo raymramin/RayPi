@@ -16,6 +16,7 @@ time.sleep(2.0)
 csv = open(data_file, "w")
 
 found = set()
+found.clear()
 
 while True:
     # Grab frame from threaded video and resize to 400px
@@ -26,6 +27,11 @@ while True:
     barcodes = pyzbar.decode(frame)
 
     for barcode in barcodes:
+        # If we already got the barcode at least once successfully, quit the program
+
+        if len(found) > 0:
+            break
+
         (x, y, w, h) = barcode.rect
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)  # make border green
 
@@ -41,7 +47,6 @@ while True:
             csv.write("{}\n".format(barcodeData))
             csv.flush()
 
-            found.clear()
             found.add(barcodeData)
             break
 
