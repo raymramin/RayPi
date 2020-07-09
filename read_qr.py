@@ -43,7 +43,7 @@ while True:
 
             found.clear()
             found.add(barcodeData)
-        break
+            break
 
     cv2.imshow(window_name, frame)
     key = cv2.waitKey(1) & 0xFF
