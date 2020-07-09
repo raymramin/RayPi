@@ -5,7 +5,7 @@ import time
 import cv2
 
 window_name = "QR Code Scanner"
-data_file = "codedata.txt"
+data_file = "qrcodedata.txt"
 
 # Initialize the video stream
 print("Starting video stream...")
