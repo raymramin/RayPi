@@ -18,7 +18,7 @@ csv = open(data_file, "w")
 found = set()
 found.clear()
 
-while True:
+while len(found) == 0:
     # Grab frame from threaded video and resize to 400px
     frame = vs.read()
     frame = imutils.resize(frame, width=400)
