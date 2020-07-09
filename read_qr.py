@@ -44,6 +44,7 @@ while True:
 
             found.clear()
             found.add(barcodeData)
+        break
         else:
             print("[", i, "] barcode data found: ", barcodeData)
         i = i + 1
